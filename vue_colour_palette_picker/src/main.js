@@ -5,20 +5,27 @@ import App from './App.vue'
 import ChoosePage from "./components/ChoosePage.vue"
 import WelcomePage from "./components/WelcomePage.vue"
 import PageLayout from './components/PageLayout.vue'
+import ChooseItem from './components/ChooseItem.vue'
+import GeneratePage from './components/GeneratePage.vue'
+import OptionsPage from './components/OptionsPage.vue'
 
 const router = createRouter({
     history : createWebHistory(),
     routes: [
         { path : "/", component : WelcomePage },
-        // { path : "/choose", component : ChoosePage },
         { 
             path : "/colour-picker",
             component : PageLayout,
             children: [
-                { path : "choose", component : ChoosePage }
+                { path : "choose", component : ChoosePage, props : true },
+                { path : "generate", component : GeneratePage },
+                { path : "options", component : OptionsPage }
             ]    
         }
     ]
 })
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.component('ChooseItem', ChooseItem)
+app.mount('#app')

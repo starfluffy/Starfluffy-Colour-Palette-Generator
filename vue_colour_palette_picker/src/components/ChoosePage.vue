@@ -1,6 +1,10 @@
+<script>
+    import ChooseItem from './ChooseItem.vue';
+</script>
+
 <template>
     <div class="choose">
-        <button>Give me a random colour palette!</button>
-        <button>Let me choose some settings!</button>
+        <ChooseItem text='Let me choose some settings for my colour palette!' path='options' />
+        <ChooseItem text='Just give me a random colour palette!' path='generate' />
     </div>
 </template>
