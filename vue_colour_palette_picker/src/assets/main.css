@@ -5,7 +5,7 @@
 }
 
 #app {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
@@ -42,6 +42,28 @@
   background-color: white;
   background-image: none;
   color: var(--green-color);
+}
+
+.choose {  
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  min-height: 100vh;
+}
+
+.icon-logo {
+  height: 70px;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.site-name {
+  font-size: 15px;
+  width: 150px;
+}
+
+.header {
+  position: fixed;
 }
 
 a,

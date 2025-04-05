@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="choose">
         <button>Give me a random colour palette!</button>
         <button>Let me choose some settings!</button>
     </div>
