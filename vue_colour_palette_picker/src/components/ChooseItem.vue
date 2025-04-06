@@ -7,7 +7,7 @@
 <template>
     <div class="choose-item">
         <router-link :to="'/colour-picker/' + path">
-            <button>{{ text }}</button>
+            <button class="choose-button">{{ text }}</button>
         </router-link>       
     </div>
 </template>
