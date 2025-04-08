@@ -3,8 +3,7 @@
     import { ref } from 'vue';
     var url = "http://colormind.io/api/";
     var data = {
-        model : "default",
-        input : [[44,43,44],[90,83,82],"N","N","N"]
+        model : "default"
     }
 
     var isGenerated = ref(false);
