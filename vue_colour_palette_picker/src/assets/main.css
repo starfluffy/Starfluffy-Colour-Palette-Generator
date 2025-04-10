@@ -48,12 +48,15 @@ button {
   color: var(--green-color);
 }
 
-.choose {  
+.centre-flex {  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   display: flex;
-  justify-content: center; 
-  align-items: center;
   gap: 20px;
-  min-height: 100vh;
+  align-items: center;
 }
 
 .icon-logo {
@@ -76,17 +79,15 @@ button {
   border: 0px solid var(--color-text);
   border-radius: 40px;
   font-size: 25px;
-  padding: 300px 20px 10px 20px;
+  padding: 315px 20px 0px 20px;
   width: 300px;
   height: 450px;
   color: var(--color-text);
   transition-duration: 0.4s;
   cursor: pointer;
-  /* background-image: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0) 65%, rgba(255,255,255,1) 65%), url("../assets/test.png"); */
 }
 
 .choose-button:hover {
-  /* background-image: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,1) 100%); */
   font-size: 26px;
   width: 315px;
   height: 475px;

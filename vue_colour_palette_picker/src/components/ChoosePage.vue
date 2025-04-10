@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div class="choose">
+    <div class="centre-flex">
         <ChooseItem 
-            text='Let me choose some settings for my colour palette!' 
+            text='Let me fine-tune my palette!' 
             path='options' 
             background='choose-colours.png'
         />
