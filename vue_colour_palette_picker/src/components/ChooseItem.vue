@@ -24,7 +24,7 @@
 <template>
     <div class="choose-item">
         <router-link :to="'/colour-picker/' + path">
-            <button class="choose-button" :id="path+'-choose-button'" ref="buttonRef">
+            <button class="choose-button" ref="buttonRef">
                 {{ text }}
             </button>
         </router-link>       

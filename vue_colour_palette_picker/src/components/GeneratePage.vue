@@ -24,10 +24,10 @@
 </script>
 
 <template>
-    <div class="choose">
+    <div class="centre-flex">
         <button 
-            v-if="isGenerated==true" v-for="colour in palette" :key="colour" 
-            :style="'background-color: rgb('+colour[0]+', '+colour[1]+', '+colour[2]+');'"
+            v-if="isGenerated==true" v-for="colour in palette" :key="colour" class="palette-colour"
+            :style="'background-image: linear-gradient(rgb('+colour[0]+','+colour[1]+','+colour[2]+') 0%, rgb('+colour[0]+','+colour[1]+','+colour[2]+') 70%, white 70%);'"
         >
             {{ colour[0] }}, {{ colour[1] }}, {{ colour[2] }}
         </button>
