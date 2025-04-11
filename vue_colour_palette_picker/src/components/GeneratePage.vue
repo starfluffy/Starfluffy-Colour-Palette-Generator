@@ -197,19 +197,17 @@ generatePalette();
 </script>
 
 <template>
-    <div v-if="isGenerated == true">
-        <div class="centre flex">
+    <div v-if="isGenerated == true" class="centre">
+        <div class="flex" style="margin-top: 15px;">
             <button v-for="colour in palette" :key="colour" class="palette-colour"
                 @click="copyText(colour[0], colour[1], colour[2])"
                 :style="'background-image: linear-gradient(rgb('+colour[0]+','+colour[1]+','+colour[2]+') 0%, rgb('+colour[0]+','+colour[1]+','+colour[2]+') 70%, white 70%);'">
                 {{ colour[0] }}, {{ colour[1] }}, {{ colour[2] }}
             </button>
         </div>
-        <div class="centre-bottom">
-            <button class="button-style-1" @click="generatePalette">
-                Regenerate
-            </button>
-        </div>
+        <button class="button-style-1" @click="generatePalette" style="margin-top: 18px;">
+            Regenerate
+        </button>
     </div>
     <img  class="centre flex" v-else src="../assets/loading.gif"/>
 </template>
