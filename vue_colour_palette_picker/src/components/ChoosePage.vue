@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="centre-flex">
+    <div class="centre flex">
         <ChooseItem 
             text='Let me fine-tune my palette!' 
             path='options' 

@@ -15,7 +15,7 @@ button {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.welcome {
+.centre {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,7 +23,7 @@ button {
   text-align: center;
 }
 
-.start-button {
+.button-style-1 {
   background-color: white;
   border: 3px solid var(--color-text);
   border-radius: 12px;
@@ -35,39 +35,43 @@ button {
   cursor: pointer;
 }
 
-.start-button:hover {
+.button-style-1:hover {
   background-image: linear-gradient(to bottom right, var(--green-color), rgb(109, 180, 131));
   color: white; 
   border-color: var(--green-color);
   font-size: 23px;
 }
 
-.start-button:active {
+.button-style-1:active {
   background-color: white;
   background-image: none;
   color: var(--green-color);
 }
 
-.centre-flex {  
+.centre-bottom {
   position: absolute;
-  top: 50%;
+  bottom: 19%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.flex {
   display: flex;
   gap: 20px;
-  align-items: center;
 }
 
 .icon-logo {
   height: 70px;
-  align-items: center;
-  margin-left: 20px;
+  /* align-items: center; */
+  margin-left: 35px;
 }
 
 .site-name {
   font-size: 15px;
   width: 150px;
+  color: var(--color-text);
+  text-align: center;
 }
 
 .header {
@@ -90,7 +94,7 @@ button {
 .choose-button:hover {
   font-size: 26px;
   width: 315px;
-  height: 475px;
+  height: 465px;
   padding: 325px 20px 0px 20px;
 }
 
@@ -114,13 +118,14 @@ button {
   padding: 210px 10px 0px 10px;
 }
 
+/* 
 a,
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
   padding: 3px;
-}
+} */
 
 /* @media (hover: hover) {
   a:hover {
