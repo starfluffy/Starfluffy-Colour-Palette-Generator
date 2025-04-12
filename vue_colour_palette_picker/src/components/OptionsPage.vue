@@ -171,7 +171,7 @@ function clickOption(input, inputName) {
 </script>
 
 <template>
-  <div class="h-centre" style="margin: 60px 0px 50px 0px">
+  <div class="h-centre" style="margin: 20px 0px 50px 0px">
     <h1 class="flex" style="margin-bottom: 20px; font-size: 40px">
       Choose a Palette Style!
     </h1>

@@ -60,13 +60,14 @@ generatePalette();
         {{ colour[0] }}, {{ colour[1] }}, {{ colour[2] }}
       </button>
     </div>
-    <button
-      class="button-style-1"
-      @click="generatePalette"
-      style="margin-top: 18px"
-    >
-      Regenerate
-    </button>
+    <div class="flex" style="margin-top: 18px">
+      <button class="button-style-1" @click="generatePalette">
+        Regenerate
+      </button>
+      <router-link to="/colour-picker/options">
+        <button class="button-style-1">Choose a style</button>
+      </router-link>
+    </div>
   </div>
-  <img class="centre flex" v-else src="../assets/loading.gif" />
+  <img class="centre" v-else src="../assets/loading.gif" />
 </template>
