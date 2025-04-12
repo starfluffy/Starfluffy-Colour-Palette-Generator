@@ -1,7 +1,3 @@
-<script>
-    import ChooseItem from './ChooseItem.vue';
-</script>
-
 <template>
     <div class="centre flex">
         <ChooseItem 
