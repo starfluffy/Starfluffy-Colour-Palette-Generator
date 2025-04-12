@@ -1,4 +1,5 @@
 <template>
+  <!-- links to the page where users choose random or custom colour palette -->
   <router-link to="choose" append>
     <div class="header">
       <img src="../assets/starfluffy_logo.png" class="icon-logo" />

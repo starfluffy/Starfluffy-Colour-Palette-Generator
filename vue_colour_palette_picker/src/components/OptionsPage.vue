@@ -3,6 +3,7 @@ import { inject } from "vue";
 const data = inject("data");
 const inputGroupName = inject("inputName");
 
+// defining the possible inputs for the api
 const temperature = {
   Warm: [
     [255, 94, 77],
@@ -153,12 +154,15 @@ const japanCulture = {
     [255, 255, 255],
   ],
 };
+// storing all the input groups to be iterated over in the templatae
 const inputGroups = { temperature, sun, seasons, elements, japanCulture };
 
+// imports the images from the assets folder and returns the url for the image
 function getImageUrl(name) {
   return new URL(`../assets/options/${name}.png`, import.meta.url).href;
 }
 
+// sets the data input for the api to the selected style
 function clickOption(input, inputName) {
   data.value = {
     model: "default",
@@ -170,17 +174,20 @@ function clickOption(input, inputName) {
 </script>
 
 <template>
+  <!-- we want to only align this div horizontally -->
   <div class="h-centre" style="margin: 20px 0px 50px 0px">
     <h1 class="flex" style="margin-bottom: 20px; font-size: 40px">
       Choose a Palette Style!
     </h1>
 
+    <!-- iterates over the input groups and creates a div for each "input group" displayed as a flex item -->
     <div
       class="flex"
       v-for="inputGroup in inputGroups"
       :key="inputGroup"
       style="margin-bottom: 40px"
     >
+      <!-- creates a button for each input in the input group -->
       <router-link
         v-for="(input, inputName) in inputGroup"
         :key="inputName"
