@@ -102,8 +102,8 @@ button {
   transform: scale(1.05);
 }
 
-.option-button:focus {
-  border: black 5px solid;
+.choose-button:active, .palette-colour:active, .option-button:active {
+  opacity: 0.5;
 }
 
 .palette-colour {
