@@ -20,7 +20,7 @@ function getImageUrl(name) {
   <!-- centres the contents and displays them as flex items -->
   <div class="centre flex">
     <!-- button that links to page where user can select a style -->
-    <router-link to="choose-style" append>
+    <router-link to="/colour-palette-generator/choose-style">
       <button
         class="choose-button"
         @click="setDefault"
@@ -33,7 +33,7 @@ function getImageUrl(name) {
     </router-link>
 
     <!-- button that links to the colour palette generated page with a random palete generated -->
-    <router-link to="generate" append>
+    <router-link to="/colour-palette-generator/generate">
       <button
         class="choose-button"
         @click="setDefault"

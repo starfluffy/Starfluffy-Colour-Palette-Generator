@@ -18,7 +18,7 @@ const router = createRouter({
       path: "/colour-palette-generator",
       component: PageLayout,
       children: [
-        { path: "choose-mode", component: ModesPage, props: true },
+        { path: "", component: ModesPage, props: true },
         { path: "generate", component: GeneratePage, props: true },
         { path: "choose-style", component: StylesPage },
       ],

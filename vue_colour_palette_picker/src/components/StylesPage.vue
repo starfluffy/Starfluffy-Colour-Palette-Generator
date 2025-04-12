@@ -191,8 +191,7 @@ function clickOption(input, inputName) {
       <router-link
         v-for="(input, inputName) in inputGroup"
         :key="inputName"
-        to="generate"
-        append
+        to="/colour-palette-generator/generate"
       >
         <button
           class="option-button"

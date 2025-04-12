@@ -80,7 +80,7 @@ generatePalette();
       </button>
 
       <!-- goes to the page where the user selects a style -->
-      <router-link to="choose-style" append>
+      <router-link to="/colour-palette-generator/choose-style">
         <button class="button-style-1">Choose a style</button>
       </router-link>
 
