@@ -18,7 +18,7 @@ const router = createRouter({
             component : PageLayout,
             children: [
                 { path : "choose", component : ChoosePage, props : true },
-                { path : "generate", component : GeneratePage },
+                { path : "generate", component : GeneratePage, props: true },
                 { path : "options", component : OptionsPage }
             ]    
         }
