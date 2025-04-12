@@ -1,4 +1,8 @@
 <script setup>
+    import { inject } from 'vue';
+    const data = inject('data');
+    const inputGroupName = inject('inputName');
+
     const temperature = { 
         "Warm" : [[255, 94, 77], [255, 160, 122], [255, 165, 0], [255, 193, 7], [255, 223, 186]],
         "Cool" : [[54, 162, 235], [0, 128, 128], [106, 90, 205], [72, 209, 204], [0, 102, 204]] 
@@ -29,23 +33,36 @@
         "Vocaloid" : [[0, 255, 255], [255, 105, 180], [255, 215, 0], [138, 43, 226], [135, 206, 250]],
         "Pokemon" : [[255, 0, 0], [255, 255, 0], [0, 0, 255], [255, 192, 203], [255, 255, 255]]
     };
-const inputGroups = { temperature, sun, seasons, elements, japanCulture };
+    const inputGroups = { temperature, sun, seasons, elements, japanCulture };
 
-function getImageUrl(name) {
-  return new URL(`../assets/options/${name}.png`, import.meta.url).href;
-}
+    function getImageUrl(name) {
+        return new URL(`../assets/options/${name}.png`, import.meta.url).href;
+    }
+
+    function clickOption( input, inputName ) {
+        data.value = {
+            "model" : "default",
+            "input" : input
+        }
+
+        inputGroupName.value = inputName;
+    }
 
 </script>
 
 <template>
     <div class="h-centre" style="margin: 60px 0px 120px 0px;">
         <h1 class="flex" style="margin-bottom: 20px; font-size: 40px;">Choose a Palette Style!</h1>
-        <button class="button-style-1 fixed-bottom-center" style="position: fixed;">
-            Generate
-        </button>
+
+        <router-link to="/colour-picker/generate">
+            <button class="button-style-1 fixed-bottom-center">
+                Generate
+            </button>
+        </router-link>
+
         <div class="flex" v-for="inputGroup in inputGroups" :key="inputGroup" style="margin-bottom: 40px;">
             <button v-for="(input, inputName) in inputGroup" :key="inputName" class="option-button" :id="inputName"
-            :style="{ backgroundImage: `url(${getImageUrl(inputName)})` }" >
+            :style="{ backgroundImage: `url(${getImageUrl(inputName)})` }" @click="clickOption(input, inputName)">
                 {{ inputName }}
             </button>
         </div>

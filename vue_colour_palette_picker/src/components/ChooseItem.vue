@@ -1,5 +1,5 @@
 <script setup>
-    import { defineProps, onMounted, ref } from 'vue';
+    import { defineProps, onMounted, ref, inject } from 'vue';
 
     const props = defineProps( { text: String, path: String, background: String } );
     const { text, path, background } = props;
@@ -19,12 +19,20 @@
     onMounted(() => {
         setBackground();
     });
+
+    const data = inject('data');
+    const inputName = inject('inputName');
+
+    function setDefault() {
+        data.value = { "model" : "default" };
+        inputName.value = "Random";
+    }
 </script>
 
 <template>
     <div class="choose-item">
         <router-link :to="'/colour-picker/' + path">
-            <button class="choose-button" ref="buttonRef">
+            <button class="choose-button" ref="buttonRef" @click="setDefault">
                 {{ text }}
             </button>
         </router-link>       

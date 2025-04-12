@@ -3,6 +3,7 @@
     
     const url = "http://colormind.io/api/";
     const data = inject('data');
+    const inputName = inject('inputName');
     const isGenerated = ref(false);
 
     const http = new XMLHttpRequest();
@@ -16,9 +17,8 @@
                 isGenerated.value = true;
             }
         }
-
         http.open("POST", url, true);
-        http.send(JSON.stringify(data));
+        http.send(JSON.stringify(data.value));
     }
 
     function copyText(colour1, colour2, colour3) {
@@ -32,6 +32,7 @@
 
 <template>
     <div v-if="isGenerated == true" class="centre">
+        <h1>{{inputName}} Colour Palette</h1>
         <div class="flex" style="margin-top: 15px;">
             <button v-for="colour in palette" :key="colour" class="palette-colour"
                 @click="copyText(colour[0], colour[1], colour[2])"

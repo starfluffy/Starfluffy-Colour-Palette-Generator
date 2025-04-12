@@ -1,5 +1,5 @@
 import './assets/main.css'
-import { createApp, provide } from 'vue'
+import { createApp, ref } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import ChoosePage from "./components/ChoosePage.vue"
@@ -26,7 +26,12 @@ const router = createRouter({
 })
 
 const app = createApp(App)
+
+const data = ref({ model: "default" })
+const inputName = ref("Random")
+
 app.use(router)
 app.component('ChooseItem', ChooseItem)
-app.provide('data', { model: "default" })
+app.provide('data', data)
+app.provide('inputName', inputName)
 app.mount('#app')
