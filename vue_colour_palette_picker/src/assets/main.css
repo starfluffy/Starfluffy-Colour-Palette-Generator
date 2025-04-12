@@ -5,7 +5,6 @@
 }
 
 #app {
-  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
@@ -100,6 +99,9 @@ button {
   padding: 315px 20px 0px 20px;
   width: 300px;
   height: 450px;
+  background-size: auto 65%;
+  background-position: center 31px;
+  background-repeat: no-repeat;
 }
 
 .choose-button:hover,
@@ -136,31 +138,3 @@ button {
   background-position: center;
   background-repeat: no-repeat;
 }
-
-/* 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-} */
-
-/* @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-} */
-
-/* @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-} */

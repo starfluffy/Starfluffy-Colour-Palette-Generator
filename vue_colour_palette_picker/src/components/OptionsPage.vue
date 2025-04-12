@@ -154,7 +154,6 @@ const japanCulture = {
   ],
 };
 const inputGroups = { temperature, sun, seasons, elements, japanCulture };
-const selected = false;
 
 function getImageUrl(name) {
   return new URL(`../assets/options/${name}.png`, import.meta.url).href;
