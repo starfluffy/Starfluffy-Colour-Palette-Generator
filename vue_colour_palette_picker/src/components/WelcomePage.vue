@@ -9,7 +9,7 @@
     />
     <h1>Welcome to the Starfluffy Colour Palette Generator</h1>
 
-    <router-link to="/colour-picker/choose">
+    <router-link to="/colour-palette-generator/choose">
       <button class="button-style-1">Let's start!</button>
     </router-link>
   </div>

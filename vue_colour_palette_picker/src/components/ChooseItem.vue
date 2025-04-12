@@ -32,7 +32,7 @@ function setDefault() {
 
 <template>
   <div class="choose-item">
-    <router-link :to="'/colour-picker/' + path">
+    <router-link :to="path" append>
       <button class="choose-button" ref="buttonRef" @click="setDefault">
         {{ text }}
       </button>

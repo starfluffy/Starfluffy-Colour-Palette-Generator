@@ -64,7 +64,7 @@ generatePalette();
       <button class="button-style-1" @click="generatePalette">
         Regenerate
       </button>
-      <router-link to="/colour-picker/options">
+      <router-link to="options" append>
         <button class="button-style-1">Choose a style</button>
       </router-link>
     </div>

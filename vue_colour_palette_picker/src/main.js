@@ -14,7 +14,7 @@ const router = createRouter({
   routes: [
     { path: "/", component: WelcomePage },
     {
-      path: "/colour-picker",
+      path: "/colour-palette-generator",
       component: PageLayout,
       children: [
         { path: "choose", component: ChoosePage, props: true },

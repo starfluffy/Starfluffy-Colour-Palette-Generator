@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/">
+  <router-link to="choose" append>
     <div class="header">
       <img src="../assets/starfluffy_logo.png" class="icon-logo" />
       <p class="site-name">Starfluffy Colour Palette Generator</p>
