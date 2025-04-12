@@ -3,11 +3,11 @@ import "./assets/main.css";
 import { createApp, ref } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import App from "./App.vue";
-import ChoosePage from "./components/ChoosePage.vue";
+import ModesPage from "./components/ModesPage.vue";
 import WelcomePage from "./components/WelcomePage.vue";
 import PageLayout from "./components/PageLayout.vue";
 import GeneratePage from "./components/GeneratePage.vue";
-import OptionsPage from "./components/OptionsPage.vue";
+import StylesPage from "./components/StylesPage.vue";
 
 // create routes for the app
 const router = createRouter({
@@ -18,9 +18,9 @@ const router = createRouter({
       path: "/colour-palette-generator",
       component: PageLayout,
       children: [
-        { path: "choose", component: ChoosePage, props: true },
+        { path: "choose-mode", component: ModesPage, props: true },
         { path: "generate", component: GeneratePage, props: true },
-        { path: "options", component: OptionsPage },
+        { path: "choose-style", component: StylesPage },
       ],
     },
   ],

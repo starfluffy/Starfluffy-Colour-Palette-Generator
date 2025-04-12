@@ -20,7 +20,7 @@ function getImageUrl(name) {
   <!-- centres the contents and displays them as flex items -->
   <div class="centre flex">
     <!-- button that links to page where user can select a style -->
-    <router-link to="options" append>
+    <router-link to="choose-style" append>
       <button
         class="choose-button"
         @click="setDefault"
