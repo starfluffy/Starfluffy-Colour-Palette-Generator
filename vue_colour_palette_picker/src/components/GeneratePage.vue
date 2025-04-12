@@ -28,6 +28,13 @@ function copyText(colour1, colour2, colour3) {
   alert("Copied the text: " + rgbString);
 }
 
+function setDefault() {
+  data.value = { model: "default" };
+  inputName.value = "Random";
+
+  generatePalette();
+}
+
 generatePalette();
 </script>
 
@@ -67,6 +74,9 @@ generatePalette();
       <router-link to="options" append>
         <button class="button-style-1">Choose a style</button>
       </router-link>
+      <button v-if="inputName != 'Random'" class="button-style-1" @click="setDefault">
+        Generate random
+      </button>
     </div>
   </div>
   <img class="centre" v-else src="../assets/loading.gif" />
