@@ -30,6 +30,14 @@
         "Pokemon" : [[255, 0, 0], [255, 255, 0], [0, 0, 255], [255, 192, 203], [255, 255, 255]]
     };
 const inputGroups = { temperature, sun, seasons, elements, japanCulture };
+
+const images = import.meta.glob('../assets/options/*.png', { eager: true, import: 'default' });
+// then use it like: images[`../assets/options/${inputName}.png`]
+
+function getImageUrl(name) {
+  return new URL(`../assets/options/${name}.png`, import.meta.url).href;
+}
+
 </script>
 
 <template>
@@ -38,7 +46,11 @@ const inputGroups = { temperature, sun, seasons, elements, japanCulture };
             Generate
         </button>
         <div class="flex" v-for="inputGroup in inputGroups" :key="inputGroup" style="margin-bottom: 40px;">
-            <button v-for="(input, inputName) in inputGroup" :key="inputName" class="option-button">
+            <button v-for="(input, inputName) in inputGroup" :key="inputName" class="option-button" 
+            :style="{ backgroundImage: `url(${getImageUrl(inputName)})` }" >
+                <!-- <div style="position: relative;"> -->
+                    <!-- <img :src="images[`../assets/options/${inputName}.png`]" style="width: 180px; top:0; left:0;"/> -->
+                <!-- </div> -->
                 {{ inputName }}
             </button>
         </div>
