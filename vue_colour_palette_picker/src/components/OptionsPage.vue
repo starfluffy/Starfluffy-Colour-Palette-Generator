@@ -34,6 +34,7 @@
         "Pokemon" : [[255, 0, 0], [255, 255, 0], [0, 0, 255], [255, 192, 203], [255, 255, 255]]
     };
     const inputGroups = { temperature, sun, seasons, elements, japanCulture };
+    const selected = false;
 
     function getImageUrl(name) {
         return new URL(`../assets/options/${name}.png`, import.meta.url).href;
@@ -51,20 +52,16 @@
 </script>
 
 <template>
-    <div class="h-centre" style="margin: 60px 0px 120px 0px;">
+    <div class="h-centre" style="margin: 60px 0px 50px 0px;">
         <h1 class="flex" style="margin-bottom: 20px; font-size: 40px;">Choose a Palette Style!</h1>
 
-        <router-link to="/colour-picker/generate">
-            <button class="button-style-1 fixed-bottom-center">
-                Generate
-            </button>
-        </router-link>
-
         <div class="flex" v-for="inputGroup in inputGroups" :key="inputGroup" style="margin-bottom: 40px;">
-            <button v-for="(input, inputName) in inputGroup" :key="inputName" class="option-button" :id="inputName"
-            :style="{ backgroundImage: `url(${getImageUrl(inputName)})` }" @click="clickOption(input, inputName)">
-                {{ inputName }}
-            </button>
+            <router-link v-for="(input, inputName) in inputGroup" :key="inputName" to="/colour-picker/generate">
+                <button class="option-button" :id="inputName"
+                :style="{ backgroundImage: `url(${getImageUrl(inputName)})` }" @click="clickOption(input, inputName)">
+                    {{ inputName }}
+                </button>
+            </router-link>
         </div>
 
     </div>
