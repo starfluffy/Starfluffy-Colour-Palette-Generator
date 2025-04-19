@@ -17,9 +17,9 @@ export default function WelcomePage() {
       <h1>Welcome to the Starfluffy Colour Palette Generator</h1>
 
       {/* links to the page to where use can use random or custom colour */}
-      {/* <Link to="/colour-palette-generator"> */}
+      <Link to="/colour-palette-generator">
         <button className="button-style-1">Let's start!</button>
-      {/*</Link> */}
+      </Link>
     </div>
   );
 }
