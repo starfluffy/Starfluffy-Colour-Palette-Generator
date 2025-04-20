@@ -89,6 +89,7 @@ button {
 .header {
   position: fixed;
   z-index: 1000;
+  margin-left: 10px;
 }
 
 .choose-button {

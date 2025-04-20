@@ -13,8 +13,6 @@ export default function GeneratePage() {
 
   // makes a http request to the api to get the palette
   function generatePalette() {
-    console.log(data)
-    console.log(inputName);
     setIsGenerated(false);
     http.onreadystatechange = function () {
       if (http.readyState == 4 && http.status == 200) {
