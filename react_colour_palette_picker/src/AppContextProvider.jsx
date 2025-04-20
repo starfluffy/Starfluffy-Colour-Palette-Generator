@@ -7,7 +7,7 @@ const initialInputName = "Random";
 // Create the context
 const AppContext = React.createContext({
   data: initialData,
-  inputName: initialInputName
+  inputName: initialInputName,
 });
 
 function AppContextProvider({ children }) {
@@ -15,19 +15,21 @@ function AppContextProvider({ children }) {
   const [data, setData] = useState(initialData);
   const [inputName, setInputName] = useState(initialInputName);
 
-  // sets the input for the api back to the default
+  /**
+   * @description sets the input for the api back to the default
+   */
   function setDefault() {
     setData({ model: "default" });
     setInputName("Random");
   }
 
-  // The values that will be passed down  
+  // The values that will be passed down
   const context = {
     data,
     inputName,
     setData,
     setInputName,
-    setDefault
+    setDefault,
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;

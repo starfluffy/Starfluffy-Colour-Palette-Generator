@@ -5,8 +5,8 @@ import chooseImage from "../assets/choose-colours.png";
 import randomColoursImage from "../assets/random-colours.png";
 
 export default function ModesPage() {
-  const { data, inputName, setData, setInputName, setDefault } = useContext(AppContext);
-  
+  const { setDefault } = useContext(AppContext);
+
   return (
     // centres the contents and displays them as flex items
     <div className="centre flex">
@@ -15,7 +15,7 @@ export default function ModesPage() {
         <button
           className="choose-button"
           onClick={() => setDefault()}
-          style={{backgroundImage: `url(${chooseImage})` }}
+          style={{ backgroundImage: `url(${chooseImage})` }}
         >
           Let me choose a style for my colour palette!
         </button>
@@ -26,7 +26,7 @@ export default function ModesPage() {
         <button
           className="choose-button"
           onClick={() => setDefault()}
-          style={{backgroundImage: `url(${randomColoursImage})` }}
+          style={{ backgroundImage: `url(${randomColoursImage})` }}
         >
           Just give me a random colour palette!
         </button>

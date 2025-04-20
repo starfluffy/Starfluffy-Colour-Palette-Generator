@@ -5,7 +5,7 @@ import { AppContextProvider } from "./AppContextProvider";
 import App from "./App";
 import "./main.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <AppContextProvider>
@@ -13,4 +13,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </AppContextProvider>
     </BrowserRouter>
   </React.StrictMode>
-)
+);

@@ -5,13 +5,14 @@ import loadingGif from "../assets/loading.gif";
 
 export default function GeneratePage() {
   const url = "http://colormind.io/api/";
-  const { data, inputName, setData, setInputName, setDefault } =
-    useContext(AppContext);
+  const { data, inputName, setDefault } = useContext(AppContext);
   const [isGenerated, setIsGenerated] = useState(false);
   const [palette, setPalette] = useState([]);
   const http = new XMLHttpRequest();
 
-  // makes a http request to the api to get the palette
+  /**
+   * @description makes a http request to the api to get the palette. the request sends data which defines any input and models used
+   */
   function generatePalette() {
     console.log(data);
     console.log(inputName);
@@ -26,7 +27,13 @@ export default function GeneratePage() {
     http.send(JSON.stringify(data));
   }
 
-  // copies the rgb text to the clipboard and alerts the user
+  /**
+   *
+   * @param {number} colour1
+   * @param {number} colour2
+   * @param {number} colour3
+   * @description copies the rgb text to the clipboard and alerts the user
+   */
   function copyText(colour1, colour2, colour3) {
     const rgbString =
       colour1.toString() +
@@ -38,15 +45,14 @@ export default function GeneratePage() {
     alert("Copied the text: " + rgbString);
   }
 
-  //   sets the input for the api back to the default
-  function generateRandomPalette() {
-    setDefault();
-  }
-
+  // regenerate the palette when the data or inputName changes
+  // this is to ensure that the palette is generated when the data or inputName changes
   useEffect(() => {
     generatePalette();
-  }, [ data, inputName]);
+  }, [data, inputName]);
 
+  // generate the palette when the page loads
+  // this is to ensure that the palette is generated when the page loads and not just when the data or inputName changes
   useEffect(() => {
     generatePalette();
   }, []);
@@ -91,10 +97,7 @@ export default function GeneratePage() {
 
             {/* <!-- button to generate a random colour palette that only shows if the current palette isn't random--> */}
             {inputName != "Random" && (
-              <button
-                className="button-style-1"
-                onClick={() => generateRandomPalette()}
-              >
+              <button className="button-style-1" onClick={() => setDefault()}>
                 Generate random
               </button>
             )}
