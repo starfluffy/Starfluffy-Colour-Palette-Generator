@@ -3,7 +3,7 @@ import { AppContext } from "../AppContextProvider";
 import { Link } from "react-router-dom";
 
 export default function StylesPage() {
-    const { data, inputName, setData, setInputName } = useContext(AppContext);
+  const { data, inputName, setData, setInputName } = useContext(AppContext);
 
   // defining the possible inputs for the api
   const temperature = {
@@ -166,12 +166,16 @@ export default function StylesPage() {
 
   // sets the data input for the api to the selected style
   function clickOption(input, inputName) {
+    console.log("clicked");
+    console.log(input);
     setData({
       model: "default",
       input: input,
     });
 
     setInputName(inputName);
+    console.log(data);
+    console.log(inputName);
   }
   return (
     // we want to only align this div horizontally

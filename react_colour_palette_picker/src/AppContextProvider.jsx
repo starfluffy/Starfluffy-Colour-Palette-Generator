@@ -15,12 +15,19 @@ function AppContextProvider({ children }) {
   const [data, setData] = useState(initialData);
   const [inputName, setInputName] = useState(initialInputName);
 
+  // sets the input for the api back to the default
+  function setDefault() {
+    setData({ model: "default" });
+    setInputName("Random");
+  }
+
   // The values that will be passed down  
   const context = {
     data,
     inputName,
     setData,
-    setInputName
+    setInputName,
+    setDefault
   };
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;

@@ -5,14 +5,8 @@ import chooseImage from "../assets/choose-colours.png";
 import randomColoursImage from "../assets/random-colours.png";
 
 export default function ModesPage() {
-  const { data, inputName, setData, setInputName } = useContext(AppContext);
-
-  // sets the input for the api back to the default
-  function setDefault() {
-    setData({ model: "default" });
-    setInputName("Random");
-  }
-
+  const { data, inputName, setData, setInputName, setDefault } = useContext(AppContext);
+  
   return (
     // centres the contents and displays them as flex items
     <div className="centre flex">
