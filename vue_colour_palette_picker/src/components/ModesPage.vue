@@ -4,13 +4,20 @@ import { inject } from "vue";
 const data = inject("data");
 const inputName = inject("inputName");
 
-// sets the input for the api back to the default
+/**
+ * @description sets the input for the api back to the default and generates a new palette
+ */
 function setDefault() {
   data.value = { model: "default" };
   inputName.value = "Random";
 }
 
-// imports the images from the assets folder and returns the url for the image
+/**
+ *
+ * @param {string} name
+ * @returns the image url for the button background
+ * @description this function takes the name of the image and returns the url for the image. this is used to set the background image of the button.
+ */
 function getImageUrl(name) {
   return new URL(`../assets/${name}`, import.meta.url).href;
 }

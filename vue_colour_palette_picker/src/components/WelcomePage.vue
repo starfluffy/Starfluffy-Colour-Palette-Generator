@@ -1,6 +1,5 @@
 <template>
   <div class="centre">
-
     <!-- logo -->
     <img
       alt="Starfluffy logo"

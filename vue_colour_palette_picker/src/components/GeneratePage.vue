@@ -8,7 +8,9 @@ const isGenerated = ref(false);
 const http = new XMLHttpRequest();
 var palette;
 
-// makes a http request to the api to get the palette
+/**
+ * @description makes a http request to the api to get the palette. the request sends data which defines any input and models used
+ */
 function generatePalette() {
   isGenerated.value = false;
   http.onreadystatechange = function () {
@@ -21,7 +23,13 @@ function generatePalette() {
   http.send(JSON.stringify(data.value));
 }
 
-// copies the rgb text to the clipboard and alerts the user
+/**
+ *
+ * @param {number} colour1
+ * @param {number} colour2
+ * @param {number} colour3
+ * @description copies the rgb text to the clipboard and alerts the user
+ */
 function copyText(colour1, colour2, colour3) {
   const rgbString =
     colour1.toString() + ", " + colour2.toString() + ", " + colour3.toString();
@@ -29,7 +37,9 @@ function copyText(colour1, colour2, colour3) {
   alert("Copied the text: " + rgbString);
 }
 
-// sets the input for the api back to the default
+/**
+ * @description sets the input for the api back to the default and generates a new palette
+ */
 function setDefault() {
   data.value = { model: "default" };
   inputName.value = "Random";
@@ -37,6 +47,7 @@ function setDefault() {
   generatePalette();
 }
 
+// calls the generatePalette function when the page loads to generate a palette
 generatePalette();
 </script>
 

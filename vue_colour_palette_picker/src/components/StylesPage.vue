@@ -157,12 +157,22 @@ const japanCulture = {
 // storing all the input groups to be iterated over in the templatae
 const inputGroups = { temperature, sun, seasons, elements, japanCulture };
 
-// imports the images from the assets folder and returns the url for the image
+/**
+ *
+ * @param {string} name
+ * @returns the image url for the button background
+ * @description this function takes the name of the image and returns the url for the image. this is used to set the background image of the button.
+ */
 function getImageUrl(name) {
   return new URL(`../assets/options/${name}.png`, import.meta.url).href;
 }
 
-// sets the data input for the api to the selected style
+/**
+ *
+ * @param {string} input
+ * @param {string} inputName
+ * @description this function sets the data input for the api to the selected style. it also sets the input name to be displayed on the generate page.
+ */
 function clickOption(input, inputName) {
   data.value = {
     model: "default",
