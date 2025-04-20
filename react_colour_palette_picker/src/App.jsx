@@ -10,8 +10,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={ < WelcomePage /> } />
       <Route path="colour-palette-generator" element={ < PageLayout /> } >
-        <Route index element={ < Navigate to="modes" /> } />
-        <Route path="modes" element={ < ModesPage /> } />
+        <Route index element={ < ModesPage /> } />
         <Route path="generate" element={ < GeneratePage /> } />
         <Route path="choose-style" element={ < StylesPage /> } />
       </Route>
