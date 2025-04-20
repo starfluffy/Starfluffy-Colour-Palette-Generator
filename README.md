@@ -12,3 +12,6 @@ To run the Vue project, simply open your terminal change directory to `vue_colou
 To run the Vue project, simply open your terminal change directory to `react_colour_palette_generator` and then run the following command in order:
 * `npm install` - This will install all the dependencies for the project.
 * `npm run dev` - This will start the development server. You can view the app in your browser the link provided in the terminal.
+
+## Acknowledgements:
+* [Colormind.io api](http://colormind.io/) - Colour palette generator that uses deep learning. It has a REST API so its features can be accessed for the app.
